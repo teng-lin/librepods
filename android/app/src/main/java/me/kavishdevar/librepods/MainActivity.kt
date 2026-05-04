@@ -185,18 +185,14 @@ class MainActivity : ComponentActivity() {
 
     override fun onDestroy() {
         try {
-            if (::serviceConnection.isInitialized) {
-                unbindService(serviceConnection)
-                Log.d("MainActivity", "Unbound service")
-            }
+            unbindService(serviceConnection)
+            Log.d("MainActivity", "Unbound service")
         } catch (e: Exception) {
             Log.e("MainActivity", "Error while unbinding service: $e")
         }
         try {
-            if (::connectionStatusReceiver.isInitialized) {
-                unregisterReceiver(connectionStatusReceiver)
-                Log.d("MainActivity", "Unregistered receiver")
-            }
+            unregisterReceiver(connectionStatusReceiver)
+            Log.d("MainActivity", "Unregistered receiver")
         } catch (e: Exception) {
             Log.e("MainActivity", "Error while unregistering receiver: $e")
         }
@@ -206,18 +202,14 @@ class MainActivity : ComponentActivity() {
 
     override fun onStop() {
         try {
-            if (::serviceConnection.isInitialized) {
-                unbindService(serviceConnection)
-                Log.d("MainActivity", "Unbound service")
-            }
+            unbindService(serviceConnection)
+            Log.d("MainActivity", "Unbound service")
         } catch (e: Exception) {
             Log.e("MainActivity", "Error while unbinding service: $e")
         }
         try {
-            if (::connectionStatusReceiver.isInitialized) {
-                unregisterReceiver(connectionStatusReceiver)
-                Log.d("MainActivity", "Unregistered receiver")
-            }
+            unregisterReceiver(connectionStatusReceiver)
+            Log.d("MainActivity", "Unregistered receiver")
         } catch (e: Exception) {
             Log.e("MainActivity", "Error while unregistering receiver: $e")
         }
